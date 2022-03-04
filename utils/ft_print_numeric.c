@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stdlib.h>
 
 int	ft_printnbr(int n)
 {

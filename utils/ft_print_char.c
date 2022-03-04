@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
+#include <stdlib.h>
 
 int	ft_printchar(int c)
 {
@@ -25,6 +27,11 @@ int	ft_printstr(char *s)
 
 	count = -1;
 	length = 0;
+	if (str == NULL)
+	{
+		ft_printchar("(null)");
+		return (6);
+	}
 	while (s[count++])
 		length += ft_printchar(s[count]);
 	return (length);
