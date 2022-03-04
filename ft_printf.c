@@ -48,12 +48,12 @@ int ft_printf(const char *, ...)
     while (s[count])
     {
         if (s[count] == '%')
-            ft_put_arg(args, s[count++])
+            lenght += ft_put_arg(args, s[count++])
         else
-            ft_putchar_fd(s[count]);
+            lenght += ft_putchar(s[count]);
 
         count++;
     }
 	va_end(args);
-	return (print_length);
+	return (length);
 }
