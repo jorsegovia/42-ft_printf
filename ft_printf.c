@@ -16,7 +16,7 @@ Requirements:
 • Your function has to handle the following conversions: cspdiuxX%
 • Your function will be compared against the original printf().
 • You must use the command ar to create your library.
-    Using the libtool command is forbidden.
+	Using the libtool command is forbidden.
 • Your libftprintf.a has to be created at the root of your repository
 
 You have to implement the following conversions:
@@ -33,27 +33,23 @@ You have to implement the following conversions:
 
 #include "ft_printf.h"
 
-
-
-
-int ft_printf(const char *, ...)
+int	ft_printf(const char *, ...)
 {
-    int count;
-    int lenght;
-    va_list args;
+	int		count;
+	int		lenght;
+	va_list	args;
 
-    count = 0;
+	count = 0;
 	length = 0;
 	va_start(args, str);
-    while (s[count])
-    {
-        if (s[count] == '%')
-            lenght += ft_put_arg(args, s[count++])
-        else
-            lenght += ft_putchar(s[count]);
-
-        count++;
-    }
+	while (s[count])
+	{
+		if (s[count] == '%')
+			lenght += ft_put_arg(args, s[count++]);
+		else
+			lenght += ft_putchar(s[count]);
+		count++;
+	}
 	va_end(args);
 	return (length);
 }
