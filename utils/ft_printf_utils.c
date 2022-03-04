@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-ft_put_arg(va_list args, const char s)
+int	ft_put_arg(va_list args, const char s)
 {
 	int	lenght;
 
@@ -31,6 +31,5 @@ ft_put_arg(va_list args, const char s)
 		lenght += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')						//percent sign
 		lenght += ft_putchar('%');
-
 	return (lenght);
 }

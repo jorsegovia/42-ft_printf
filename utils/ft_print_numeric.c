@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int ft_printnbr(int n)
+int	ft_printnbr(int n)
 {
-    int     length;
-    char	*number;
+	int		length;
+	char	*number;
 
 	len = 0;
 	number = ft_itoa(n);
@@ -24,16 +24,16 @@ int ft_printnbr(int n)
 	return (len);
 }
 
-int ft_print_unsigned(va_arg(args, unsigned int))
+int	ft_print_unsigned(unsigned int u))
 {
-    int length;
+	int	length;
 
 	return (len);
 }
 
-int ft_print_hex(va_arg(args, unsigned int), format)
+int	ft_print_hex(unsigned int h, const char format)
 {
-    int length;
-    
+	int	length;
+
 	return (len);
 }

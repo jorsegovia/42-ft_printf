@@ -18,15 +18,14 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int ft_printstr(char *s)
+int	ft_printstr(char *s)
 {
-    int length;
-    int count;
+	int	length;
+	int	count;
 
-    count = -1;
-    length = 0;
-    while (s[count++])
-        length += ft_printchar(s[count]);
-
-    return (length);
+	count = -1;
+	length = 0;
+	while (s[count++])
+		length += ft_printchar(s[count]);
+	return (length);
 }

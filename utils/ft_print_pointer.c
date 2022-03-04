@@ -1,10 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsegovia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/04 11:47:53 by jsegovia          #+#    #+#             */
+/*   Updated: 2022/03/04 11:47:57 by jsegovia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_ptr(va_arg(args, unsigned long long))
+int	ft_print_ptr(unsigned long pointer)
 {
-    int length;
+	int	length;
 
-    return (length);
+	return (length);
 }
