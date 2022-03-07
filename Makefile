@@ -10,19 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_M = ft_printf.c ft_printf.h ft_print_char.c ft_print_numeric.c \
-		 ft_print_pointer.c ft_printf_utils.c
+SRC_DIR = src/
+OBJ_DIR = obj/
 
-SRCS_B = 
+SRC_F_M = ft_printf.c ft_print_char.c ft_print_numeric.c \
+		  ft_print_pointer.c ft_printf_utils.c
 
-#PREF_M =
-#PREF_B = 
+SRC_F_B = 
 
 OBJS_M = $(SRCS_M:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
 
-#SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-#OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+SRC_M 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_M)))
+OBJ_M 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_F_M)))
+SRC_B 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_B)))
+OBJ_B 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_F_B)))
 
 
 CC		= cc
