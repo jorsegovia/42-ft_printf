@@ -81,6 +81,53 @@ int main (void)
 		ft_printf("%s", str);
 	}
 
+	if(printf("%p", ptr) != ft_printf("%p", ptr))
+		printf("\nTest failed for ptr");
+	else
+	{
+		printf("\nTest success for ptr with: ");
+		ft_printf("%p", ptr);
+	}
+
+	if(printf("%i", i) != ft_printf("%i", i))
+		printf("\nTest failed for int");
+	else
+	{
+		printf("\nTest success for int with: ");
+		ft_printf("%i", i);
+	}
+
+	if(printf("%d", i) != ft_printf("%d", i))
+		printf("\nTest failed for decimal");
+	else
+	{
+		printf("\nTest success for decimal with: ");
+		ft_printf("%d", i);
+	}
+
+	if(printf("%u", u) != ft_printf("%u", u))
+		printf("\nTest failed for unsigned");
+	else
+	{
+		printf("\nTest success for unsigned with: ");
+		ft_printf("%u", u);
+	}
+
+	if(printf("%x", h) != ft_printf("%x", h))
+		printf("\nTest failed for hexa minor");
+	else
+	{
+		printf("\nTest success for hexa minor with: ");
+		ft_printf("%x", h);
+	}
+
+	if(printf("%X", str) != ft_printf("%X", str))
+		printf("\nTest failed for hexa major");
+	else
+	{
+		printf("\nTest success for hexa major with: ");
+		ft_printf("%X", str);
+	}
 
 	printf("\n\n\t --- TEST END ---");
 
