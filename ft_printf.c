@@ -32,22 +32,24 @@ You have to implement the following conversions:
 */
 
 #include "ft_printf.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		count;
-	int		lenght;
+	int		length;
 	va_list	args;
 
 	count = 0;
 	length = 0;
 	va_start(args, str);
-	while (s[count])
+	while (str[count])
 	{
-		if (s[count] == '%')
-			lenght += ft_get_arg(args, s[count++]);
+		if (str[count] == '%')
+			length += ft_get_arg(args, str[count++]);
 		else
-			lenght += ft_print_char(s[count]);
+			length += ft_print_char(str[count]);
 		count++;
 	}
 	va_end(args);
@@ -56,8 +58,8 @@ int	ft_printf(const char *, ...)
 
 int main (void)
 {
-	char c = "A";
-	char *str = "ABCDEEFG"
+	char c = 'A';
+	char *str = "ABCDEEFG";
 	char *ptr = malloc(32);
 	int i = 15263;
 	unsigned int u = 789456;
@@ -78,15 +80,15 @@ int main (void)
 	else
 	{
 		printf("\nTest success for str with: ");
-		ft_printf("%s", str);
+		ft_printf("%s", &str);
 	}
 
-	if(printf("%p", ptr) != ft_printf("%p", ptr))
+	if(printf("%p", &ptr) != ft_printf("%p", &ptr))
 		printf("\nTest failed for ptr");
 	else
 	{
 		printf("\nTest success for ptr with: ");
-		ft_printf("%p", ptr);
+		ft_printf("%p", &ptr);
 	}
 
 	if(printf("%i", i) != ft_printf("%i", i))
@@ -121,12 +123,12 @@ int main (void)
 		ft_printf("%x", h);
 	}
 
-	if(printf("%X", str) != ft_printf("%X", str))
+	if(printf("%X", h) != ft_printf("%X", h))
 		printf("\nTest failed for hexa uppercase");
 	else
 	{
 		printf("\nTest success for hexa uppercase with: ");
-		ft_printf("%X", str);
+		ft_printf("%X", h);
 	}
 
 	printf("\n\n\t --- TEST END ---");
