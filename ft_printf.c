@@ -53,3 +53,35 @@ int	ft_printf(const char *, ...)
 	va_end(args);
 	return (length);
 }
+
+int main (void)
+{
+	char c = "A";
+	char *str = "ABCDEEFG"
+	char *ptr = malloc(32);
+	int i = 15263;
+	unsigned int u = 789456;
+	int h = 4862159;
+
+	printf("\n\n\t --- TEST START ---");
+
+	if(printf("%c", c) != ft_printf("%c", c))
+		printf("\nTest failed for char");
+	else
+	{
+		printf("\nTest success for char with: ");
+		ft_printf("%c", c);
+	}
+
+	if(printf("%s", str) != ft_printf("%s", str))
+		printf("\nTest failed for str");
+	else
+	{
+		printf("\nTest success for str with: ");
+		ft_printf("%s", str);
+	}
+
+
+	printf("\n\n\t --- TEST END ---");
+
+}
