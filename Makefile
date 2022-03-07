@@ -10,15 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_M = 
+SRCS_M = ft_printf.c ft_printf.h ft_print_char.c ft_print_numeric.c \
+		 ft_print_pointer.c ft_printf_utils.c
 
 SRCS_B = 
 
 #PREF_M =
 #PREF_B = 
 
-OBJS_M = $(SRCS:.c=.o)
-OBJS_B = $(SRCS:.c=.o)
+OBJS_M = $(SRCS_M:.c=.o)
+OBJS_B = $(SRCS_B:.c=.o)
 
 #SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 #OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
