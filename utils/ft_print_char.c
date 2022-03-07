@@ -14,13 +14,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_printchar(int c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_printstr(char *s)
+int	ft_print_str(char *str)
 {
 	int	length;
 	int	count;
@@ -29,10 +29,10 @@ int	ft_printstr(char *s)
 	length = 0;
 	if (str == NULL)
 	{
-		ft_printchar("(null)");
+		ft_print_char("(null)");
 		return (6);
 	}
-	while (s[count++])
-		length += ft_printchar(s[count]);
+	while (str[count++])
+		length += ft_print_char(str[count]);
 	return (length);
 }

@@ -45,9 +45,9 @@ int	ft_printf(const char *, ...)
 	while (s[count])
 	{
 		if (s[count] == '%')
-			lenght += ft_put_arg(args, s[count++]);
+			lenght += ft_get_arg(args, s[count++]);
 		else
-			lenght += ft_putchar(s[count]);
+			lenght += ft_print_char(s[count]);
 		count++;
 	}
 	va_end(args);

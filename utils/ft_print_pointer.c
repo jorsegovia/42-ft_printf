@@ -14,19 +14,23 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_pointer_length(unsigned long pointer)
+void	ft_print_pointer(unsigned long ptr)
 {
-	int	length;
-
-	return (length);
+	if (num >= 16)
+	{
+		ft_print_pointer(num / 16);
+		ft_print_pointer(num % 16);
+	}
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
 }
 
-void	ft_print_pointer(unsigned long pointer)
-{
-
-}
-
-int	ft_print_ptr(unsigned long pointer)
+int	ft_print_ptr(unsigned long ptr)
 {
 	int	length;
 
@@ -36,8 +40,8 @@ int	ft_print_ptr(unsigned long pointer)
 		length += write(1,0,1);
 	else
 	{
-		ft_print_pointer(pointer);
-		length += ft_pointer_length(pointer);
+		ft_print_pointer(ptr);
+		length += ft_getlen(ptr, 16);
 	}
 	return (length);
 }

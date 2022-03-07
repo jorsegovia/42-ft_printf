@@ -12,7 +12,20 @@
 
 #include "ft_printf.h"
 
-int	ft_put_arg(va_list args, const char s)
+int ft_getlen(int n, int b)
+{
+	int	length;
+
+	length = 0;
+	while (n != 0)
+	{
+		length++;
+		n = n / b;
+	}
+	return (n);
+}
+
+int	ft_get_arg(va_list args, const char s)
 {
 	int	lenght;
 
@@ -30,6 +43,6 @@ int	ft_put_arg(va_list args, const char s)
 	else if (format == 'x' || format == 'X')	//hexa as upper or lowercase
 		lenght += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')						//percent sign
-		lenght += ft_putchar('%');
+		lenght += ft_print_char('%');
 	return (lenght);
 }
