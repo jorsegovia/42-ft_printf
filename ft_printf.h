@@ -13,11 +13,13 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+//# include "libft.h"
 # include <stdarg.h>
+
+int		ft_printf(const char *, ...);
 //printf_utils.c
 int		ft_getlen(int n, int b);
-int		ft_printf(const char *, ...);
+int		ft_get_arg(va_list args, const char s);
 //printf_char.c
 int		ft_print_char(int c);
 int		ft_print_str(char *str);
@@ -30,3 +32,5 @@ int		ft_print_hex(unsigned int hex, const char format);
 //print_pointer.c
 void	ft_print_pointer(unsigned long ptr);
 int		ft_print_ptr(unsigned long ptr);
+
+#endif
