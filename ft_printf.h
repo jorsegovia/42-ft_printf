@@ -16,7 +16,7 @@
 # include "libft.h"
 # include <stdarg.h>
 //printf_utils.c
-int 	ft_getlen(int n, int b);
+int		ft_getlen(int n, int b);
 int		ft_printf(const char *, ...);
 //printf_char.c
 int		ft_print_char(int c);

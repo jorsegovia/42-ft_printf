@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_getlen(int n, int b)
+int	ft_getlen(int n, int b)
 {
 	int	length;
 
@@ -30,19 +30,27 @@ int	ft_get_arg(va_list args, const char s)
 	int	lenght;
 
 	lenght = 0;
-	if (format == 'c')							//single char
+	if (format == 'c')
 		lenght += ft_printchar(va_arg(args, int));
-	else if (format == 's')						//string
+	else if (format == 's')
 		lenght += ft_printstr(va_arg(args, char *));
-	else if (format == 'p')						//pointer as hexa
+	else if (format == 'p')
 		lenght += ft_print_ptr(va_arg(args, unsigned long long));
-	else if (format == 'd' || format == 'i')	//decimal or int as base 10
+	else if (format == 'd' || format == 'i')
 		lenght += ft_printnbr(va_arg(args, int));
-	else if (format == 'u')						//unsigned as base 10
+	else if (format == 'u')
 		lenght += ft_print_unsigned(va_arg(args, unsigned int));
-	else if (format == 'x' || format == 'X')	//hexa as upper or lowercase
+	else if (format == 'x' || format == 'X')
 		lenght += ft_print_hex(va_arg(args, unsigned int), format);
-	else if (format == '%')						//percent sign
+	else if (format == '%')
 		lenght += ft_print_char('%');
 	return (lenght);
 }
+
+//33	: single char
+//35	: string
+//37	: pointer as hexa
+//39	: decimal or int as base 10
+//41	: unsigned as base 10
+//43	: hexa as upper or lowercase
+//45	: percent sign

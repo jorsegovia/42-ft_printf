@@ -37,7 +37,7 @@ int	ft_print_ptr(unsigned long ptr)
 	length = 0;
 	length += write(1, "0x", 2);
 	if (ptr == 0)
-		length += write(1,0,1);
+		length += write(1, 0, 1);
 	else
 	{
 		ft_print_pointer(ptr);

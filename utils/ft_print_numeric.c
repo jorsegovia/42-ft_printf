@@ -47,7 +47,7 @@ char	*ft_uitoa(unsigned int n)
 
 int	ft_print_unsigned(unsigned int uns)
 {
-	int	length;
+	int		length;
 	char	*number;
 
 	length = 0;
