@@ -62,17 +62,17 @@ int	ft_print_unsigned(unsigned int uns)
 	return (length);
 }
 
-void	ft_print_hex(unsigned int hex, const char format)
+void	ft_put_hex(unsigned int hex, const char format)
 {
 	if (hex >= 16)
 	{
-		ft_print_hex(hex / 16, format);
-		ft_print_hex(hex % 16, format);
+		ft_put_hex(hex / 16, format);
+		ft_put_hex(hex % 16, format);
 	}
 	else
 	{
 		if (hex <= 9)
-			ft_print_hex((hex + '0'), 1);
+			ft_print_char((hex + '0'), 1);
 		else
 		{
 			if (format == 'x')
