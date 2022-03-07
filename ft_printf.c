@@ -114,18 +114,18 @@ int main (void)
 	}
 
 	if(printf("%x", h) != ft_printf("%x", h))
-		printf("\nTest failed for hexa minor");
+		printf("\nTest failed for hexa lowercase");
 	else
 	{
-		printf("\nTest success for hexa minor with: ");
+		printf("\nTest success for hexa lowercase with: ");
 		ft_printf("%x", h);
 	}
 
 	if(printf("%X", str) != ft_printf("%X", str))
-		printf("\nTest failed for hexa major");
+		printf("\nTest failed for hexa uppercase");
 	else
 	{
-		printf("\nTest success for hexa major with: ");
+		printf("\nTest success for hexa uppercase with: ");
 		ft_printf("%X", str);
 	}
 
