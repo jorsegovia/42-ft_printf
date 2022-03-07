@@ -44,7 +44,8 @@ all:	$(NAME)
 
 bonus:	$(BONUS)
 
-clean:	$(RM)	$(OBJS)	$(OBJS_A)	$(OBJS_B)
+clean:	
+		$(RM)	$(OBJS_M)	$(OBJS_B)
 
 fclean:	clean
 		$(RM)	$(NAME)
