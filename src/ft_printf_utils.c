@@ -25,19 +25,19 @@ int	ft_getlen(int n, int b)
 	return (n);
 }
 
-int	ft_get_arg(va_list args, const char s)
+int	ft_get_arg(va_list args, const char format)
 {
 	int	lenght;
 
 	lenght = 0;
 	if (format == 'c')
-		lenght += ft_printchar(va_arg(args, int));
+		lenght += ft_print_char(va_arg(args, int));
 	else if (format == 's')
-		lenght += ft_printstr(va_arg(args, char *));
+		lenght += ft_print_str(va_arg(args, char *));
 	else if (format == 'p')
 		lenght += ft_print_ptr(va_arg(args, unsigned long long));
 	else if (format == 'd' || format == 'i')
-		lenght += ft_printnbr(va_arg(args, int));
+		lenght += ft_print_nbr(va_arg(args, int));
 	else if (format == 'u')
 		lenght += ft_print_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')

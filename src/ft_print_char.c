@@ -11,13 +11,20 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
-#include <stdlib.h>
 
 int	ft_print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);
+}
+
+void	ft_put_str(char *str)
+{
+	int	count;
+
+	count = -1;
+	while (str[count++])
+		write(1, &str[count], 1);
 }
 
 int	ft_print_str(char *str)
@@ -29,7 +36,7 @@ int	ft_print_str(char *str)
 	length = 0;
 	if (str == NULL)
 	{
-		ft_print_char("(null)");
+		ft_print_str("(null)");
 		return (6);
 	}
 	while (str[count++])

@@ -13,8 +13,9 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-//# include "libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
+# include <unistd.h>
 
 int		ft_printf(const char *, ...);
 //printf_utils.c
@@ -22,6 +23,7 @@ int		ft_getlen(int n, int b);
 int		ft_get_arg(va_list args, const char s);
 //printf_char.c
 int		ft_print_char(int c);
+void	ft_put_str(char *str);
 int		ft_print_str(char *str);
 //print_numeric.c
 int		ft_print_nbr(int n);

@@ -11,22 +11,20 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
-#include <stdlib.h>
 
 void	ft_print_pointer(unsigned long ptr)
 {
-	if (num >= 16)
+	if (ptr >= 16)
 	{
-		ft_print_pointer(num / 16);
-		ft_print_pointer(num % 16);
+		ft_print_pointer(ptr / 16);
+		ft_print_pointer(ptr % 16);
 	}
 	else
 	{
-		if (num <= 9)
-			ft_putchar_fd((num + '0'), 1);
+		if (ptr <= 9)
+			ft_putchar_fd((ptr + '0'), 1);
 		else
-			ft_putchar_fd((num - 10 + 'a'), 1);
+			ft_putchar_fd((ptr - 10 + 'a'), 1);
 	}
 }
 

@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
-#include <stdlib.h>
 
 int	ft_print_nbr(int n)
 {
@@ -31,15 +29,15 @@ char	*ft_uitoa(unsigned int n)
 	char	*number;
 	int		length;
 
-	length = ft_getlen(number, 10);
+	length = ft_getlen(n, 10);
 	number = (char *)malloc(sizeof(char) * (length + 1));
 	if (!number)
 		return (0);
 	number[length] = '\0';
-	while (number != 0)
+	while (n != 0)
 	{
-		number[length - 1] = number % 10 + 48;
-		number = number / 10;
+		number[length - 1] = n % 10 + 48;
+		n = n / 10;
 		length--;
 	}
 	return (number);
@@ -72,21 +70,19 @@ void	ft_put_hex(unsigned int hex, const char format)
 	else
 	{
 		if (hex <= 9)
-			ft_print_char((hex + '0'), 1);
+			ft_print_char((hex + '0'));
 		else
 		{
 			if (format == 'x')
-				ft_print_char((hex - 10 + 'a'), 1);
+				ft_print_char((hex - 10 + 'a'));
 			if (format == 'X')
-				ft_print_char((hex - 10 + 'A'), 1);
+				ft_print_char((hex - 10 + 'A'));
 		}
 	}
 }
 
 int	ft_print_hex(unsigned int hex, const char format)
 {
-	int	length;
-
 	if (hex == 0)
 		return (write(1, "0", 1));
 	else
