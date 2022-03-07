@@ -10,48 +10,65 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC_DIR = src/
-OBJ_DIR = obj/
-
-SRC_F_M = ft_printf.c ft_print_char.c ft_print_numeric.c \
-		  ft_print_pointer.c ft_printf_utils.c
-
-SRC_F_B = 
-
-OBJS_M = $(SRCS_M:.c=.o)
-OBJS_B = $(SRCS_B:.c=.o)
-
-SRC_M 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_M)))
-OBJ_M 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_F_M)))
-SRC_B 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_B)))
-OBJ_B 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_F_B)))
-
+#Variables
+NAME	= libftprintf.a
+BONUS	= .
 
 CC		= cc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
+AR		= ar rcs
+SRC_DIR = src/
 
-NAME	= libftprintf.a
-BONUS	= .
+#Color reference
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
 
-$(NAME):	$(OBJS_M)
-			ar	rcs	$(NAME)	$(OBJS_M)
+#Sources
+SRC_F_M = ft_printf ft_print_char ft_print_numeric \
+		  ft_print_pointer ft_printf_utils
+
+SRC_F_B = 
+
+SRC_M 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_M)))
+OBJ_M 		= 	$(addprefix $(SRC_DIR), $(addsuffix .o, $(SRC_F_M)))
+SRC_B 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_F_B)))
+OBJ_B 		= 	$(addprefix $(SRC_DIR), $(addsuffix .o, $(SRC_F_B)))
+
+#Commands
+
+$(NAME):	$(OBJ_M)
+			ar	rcs	$(NAME)	$(OBJ_M)
 			ranlib	$(NAME)
+			@echo "$(GREEN)printf compiled$(DEF_COLOR)"
 
-$(BONUS):	$(OBJS_M) $(OBJS_B)
-			ar	rcs	$(NAME)	$(OBJS_M) $(OBJS_B)
+$(BONUS):	$(OBS_M) $(OBJ_B)
+			ar	rcs	$(NAME)	$(OBJ_M) $(OBJ_B)
 			ranlib	$(NAME)
+			@echo "$(GREEN)printf compiled with bonus$(DEF_COLOR)"
 
 all:	$(NAME)
 
 bonus:	$(BONUS)
 
 clean:	
-		$(RM)	$(OBJS_M)	$(OBJS_B)
+		$(RM)	$(OBJ_M)	$(OBJ_B)
+		@echo "$(CYAN)Cleaned object files$(DEF_COLOR)"
 
 fclean:	clean
 		$(RM)	$(NAME)
+		@echo "$(CYAN)Cleaned executables and object files$(DEF_COLOR)"
 
 re:		fclean	all
+		@echo "$(GREEN)Cleaned and rebuilt everything$(DEF_COLOR)"
+norm:
+		@norminette $(SRC_DIR) | grep -v Norme -B1 || true
 
 .PHONY:	all	bonus	clean	fclean	re
