@@ -12,17 +12,46 @@
 
 #include "ft_printf.h"
 
-int	ft_getlen(int n, int b)
+int	ft_getlen(int num, int base)
 {
 	int	length;
 
 	length = 0;
-	while (n != 0)
+	while (num != 0)
 	{
 		length++;
-		n = n / b;
+		num = num / base;
 	}
-	return (n);
+	return (num);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		isneg;
+	size_t	len;
+	long	num;
+
+	num = n;
+	isneg = (n < 0);
+	len = ft_getlen(num, 10);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len--] = '\0';
+	if (isneg)
+	{
+		str[0] = '-';
+		num = num * -1;
+	}
+	if (num == 0)
+		str[0] = '0';
+	while (num > 0)
+	{
+		str[len--] = num % 10 + '0';
+		num /= 10;
+	}
+	return (str);
 }
 
 int	ft_get_arg(va_list args, const char format)
