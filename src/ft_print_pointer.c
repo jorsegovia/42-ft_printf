@@ -22,9 +22,9 @@ void	ft_print_pointer(unsigned long ptr)
 	else
 	{
 		if (ptr <= 9)
-			ft_putchar_fd((ptr + '0'), 1);
+			ft_print_char(ptr + '0');
 		else
-			ft_putchar_fd((ptr - 10 + 'a'), 1);
+			ft_print_char(ptr - 10 + 'a');
 	}
 }
 
